@@ -1,20 +1,21 @@
-# Step 1: Use the official Node.js base image
+# Step 1: Use Node.js base image
 FROM node:16
 
-# Step 2: Set the working directory inside the container
+# Step 2: Set the working directory
 WORKDIR /usr/src/app
 
-# Step 3: Copy package.json and package-lock.json (if available)
-COPY package*.json ./
+# Step 3: Install nodemon globally
+RUN npm install -g nodemon
 
-# Step 4: Install dependencies
+# Step 4: Copy package files and install dependencies
+COPY package*.json ./
 RUN npm install
 
 # Step 5: Copy the rest of your application code
 COPY . .
 
-# Step 6: Expose the port your app will run on
+# Step 6: Expose the port
 EXPOSE 3000
 
-# Step 7: Start your application
-CMD ["npm", "server"]
+# Step 7: Run the server script using nodemon
+CMD ["npm", "run", "server"]
