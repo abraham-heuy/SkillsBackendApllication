@@ -18,4 +18,5 @@ COPY . .
 EXPOSE 3000
 
 # Step 7: Run the server script using nodemon
-CMD ["npm", "run", "server"]
+CMD ["npm", "start"]
+
