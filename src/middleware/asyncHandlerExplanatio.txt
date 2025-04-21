@@ -43,3 +43,5 @@ Without proper error handling, unhandled promise rejections can cause the server
 Cleaner Code with Less Boilerplate
 
 Eliminates the need for manually wrapping every route with try-catch blocks
+
+this explains the workingof the async handler
