@@ -1,0 +1,23 @@
+ Test API Endpoints for Each Role
+ 🟡borrower:
+ ✅ GET /api/v1/books → ✅ Success
+✅ GET /api/v1/books/:id → ✅ Success
+✅POST /api/v1/borrow → ✅ Success
+❌ POST /api/v1/books → ❌ 403 Forbidden
+❌ PUT /api/v1/books/:id → ❌ 403 Forbidden
+❌ DELETE /api/v1/books/:id → ❌ 403 Forbidden
+
+🟡 Librarian 
+✅ POST /api/v1/books → ✅ Success
+✅ GET /api/v1/books → ✅ Success
+✅ PUT /api/v1/books/:id (update books) → ✅ Success
+❌ DELETE /api/v1/books/:id/admin → ❌ 403 Forbidden
+❌ GET /api/v1/users → ❌ 403 Forbidden
+
+🔴 Admin
+✅ GET /api/v1/users → ✅ Success
+✅ PUT /api/v1/users/:id → ✅ Success
+✅ DELETE /api/v1/users/:id → ✅ Success
+✅ DELETE /api/v1/books/:id/admin → ✅ Success
+Admin has the priviledge to perform CRUD operations on both users 
+and books
